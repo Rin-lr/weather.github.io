@@ -39,15 +39,19 @@ function day_blocks() {
         //Pildid
         var icon = document.createElement("img");
 
-       /* if (all_temps[i] <= -5) {
-            icon.src = "https://image.flaticon.com/icons/svg/642/642000.svg";
+        if (all_temps[i] <= -5) {
+            if (all_temps[i] <= -16){
+                icon.setAttribute("src", "/assets/snowy without sun.png");
+            } else {
+                icon.setAttribute("src", "/assets/snowy.png");
+            }
         } else if (all_temps[i] <= 10 ) {
-            icon.src = "https://image.flaticon.com/icons/svg/1163/1163624.svg";
+            icon.setAttribute("src", "/assets/cloud.png");
         } else if (all_temps[i] <= 18) {
-            icon.src = "https://image.flaticon.com/icons/svg/414/414936.svg";
-        }	else {
-            icon.src = "https://image.flaticon.com/icons/svg/979/979585.svg";
-        }*/
+            icon.setAttribute("src", "/assets/sun.png");
+        } else {
+            icon.setAttribute("src", "/assets/rainy.png");
+        }
         box.appendChild(icon);
         //Päeva number
         var daynumber = document.createElement("p");
@@ -93,6 +97,8 @@ function maxTemp() {
 };
 
 function show_data() { 
+    // Clears the content of the div
+    data.replaceChildren(); 
     var blok = document.createElement("div");
         blok.classList.add("blok");
 
