@@ -3,13 +3,25 @@
 	<link rel="stylesheet" href="styles.css"/>
 	<body>
 		<input id="in-days" type="number" min="0">
-		<button onclick ="generate()">Generate</button>
+		<button id="myBtn" onclick ="generate()">Generate</button>
 
 		<!--<div id = "data"></div>-->
-
+		<div id = "data"></div>
 		<div id = "forecast"></div>
 	</body>
 
-<script type="module" src="days.js"></script>
-<Script type="module" scr="show_days.js"></Script>
+<script src="days.js"></script>
+<Script> 
+	var input = document.getElementById("in-days");
+	// Execute a function when the user presses a key on the keyboard
+	input.addEventListener("keypress", function(event) {
+		// If the user presses the "Enter" key on the keyboard
+		if (event.key === "Enter") {
+		  // Cancel the default action, if needed
+		  event.preventDefault();
+		  // Trigger the button element with a click
+		  document.getElementById("myBtn").click();
+		};
+	  });
+	  </Script>
 </html>
