@@ -48,9 +48,9 @@ function day_blocks() {
         } else if (all_temps[i] <= 10 ) {
             icon.setAttribute("src", "/assets/cloud.png");
         } else if (all_temps[i] <= 18) {
-            icon.setAttribute("src", "/assets/sun.png");
-        } else {
             icon.setAttribute("src", "/assets/rainy.png");
+        } else {
+            icon.setAttribute("src", "/assets/sun.png");
         }
         box.appendChild(icon);
         //Päeva number
